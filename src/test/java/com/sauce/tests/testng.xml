@@ -1,0 +1,21 @@
+<suite name="Regression Test Suite">
+
+    <listeners>
+        <listener class="com.sauce.listeners.ScreenshotListener" />
+    </listeners>
+
+    <!-- Test for LoginPageTests -->
+    <test name="LoginPageTests">
+        <classes>
+            <class name="com.sauce.tests.LoginPageTests" />
+        </classes>
+    </test>
+
+    <!-- Test for ProductsPageTests -->
+    <test name="ProductsPageTests">
+        <classes>
+            <class name="com.sauce.tests.ProductsPageTests" />
+        </classes>
+    </test>
+
+</suite>

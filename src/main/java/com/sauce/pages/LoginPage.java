@@ -1,6 +1,7 @@
 package com.sauce.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 
 public class LoginPage extends BasePage {
 
@@ -10,7 +11,7 @@ public class LoginPage extends BasePage {
     private By passwordField = By.id("password");
     private By loginButton = By.id("login-button");
     private By loginErrorMessage = By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]");
-
+    public String errorMessage = "Epic sadface: Username and password do not match any user in this service";
 
     /** Methods **/
 
@@ -20,6 +21,15 @@ public class LoginPage extends BasePage {
 
     public void setPasswordField ( String password){
         setText(passwordField, password);
+    }
+
+
+    public boolean isLoginSuccessful() {
+        try {
+            return driver.findElement(By.className("title")).getText().equals("Products");
+        } catch (NoSuchElementException e) {
+            return false; // Login failed, element not found
+        }
     }
 
     public ProductsPage clickOnLoginButton (){
