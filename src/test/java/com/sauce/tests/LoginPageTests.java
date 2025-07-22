@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 public class LoginPageTests extends BaseTest {
 
-    @Test // Login Fail Test
+    @Test // Login should fail test
     public void testLoginErrorMessage(){
 
         loginPage.setUsernameField("standard_user");
@@ -34,6 +34,7 @@ public class LoginPageTests extends BaseTest {
         log.info("Username is entered");
         log.info("Password is entered");
         log.info("Login button is clicked");
+        sleep(2000);
 
         //Ensuring Login was successful
         Assert.assertNotNull(productPage,"Login failed: Product page not loaded!");

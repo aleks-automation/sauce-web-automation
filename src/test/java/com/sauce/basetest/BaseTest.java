@@ -5,9 +5,11 @@ import com.sauce.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
@@ -20,7 +22,7 @@ public class BaseTest {
     private String url = "https://www.saucedemo.com/";
 
 
-    @BeforeClass
+    @BeforeTest
     public void setUp(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -31,10 +33,12 @@ public class BaseTest {
     }
 
 
-    @AfterClass
+    @AfterTest
     public void tearDown(){
-     driver.quit();
+            driver.quit();
     }
+
+
 
     // One-liner sleep method with exception handling
     public static void sleep(int milliseconds) {

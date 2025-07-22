@@ -1,21 +1,19 @@
-<suite name="Regression Test Suite">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="RegressionSuite">
 
     <listeners>
-        <listener class="com.sauce.listeners.ScreenshotListener" />
+        <listener class-name="com.sauce.utils.ScreenshotListener"/>
     </listeners>
 
-    <!-- Test for LoginPageTests -->
-    <test name="LoginPageTests">
+    <test name="AllTests">
         <classes>
-            <class name="com.sauce.tests.LoginPageTests" />
+            <class name="com.sauce.tests.LoginPageTests"/>
+<!--            <class name="com.sauce.tests.ProductsPageTests"/>-->
         </classes>
     </test>
-
-    <!-- Test for ProductsPageTests -->
-    <test name="ProductsPageTests">
-        <classes>
-            <class name="com.sauce.tests.ProductsPageTests" />
-        </classes>
-    </test>
-
 </suite>
+
+
+
