@@ -1,4 +1,4 @@
-package utils;
+package com.sauce.utils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +18,7 @@ public class ScreenshotUtil {
         // Take the screenshot and store it in the specified location
         File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(screenshotFile, new File("screenshots/" + fileName)); // Specify your folder here
+            FileUtils.copyFile(screenshotFile, new File("screenshots/" + fileName));
         } catch (IOException e) {
             e.printStackTrace();
         }
